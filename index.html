@@ -84,7 +84,7 @@
         <div class="header">
             <h1>📊 Hermes Agent 报告中心</h1>
             <p>主人的个人数据分析平台</p>
-            <p>2026年6月8日</p>
+            <p id="current-date"></p>
         </div>
         
         <div class="content">
@@ -92,19 +92,19 @@
                 <h2>📈 今日数据概览</h2>
                 <div class="stat-grid">
                     <div class="stat-card">
-                        <div class="stat-number">15</div>
+                        <div class="stat-number" id="tasks">0</div>
                         <div class="stat-label">处理任务</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">8</div>
+                        <div class="stat-number" id="articles">0</div>
                         <div class="stat-label">文章收藏</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">3</div>
+                        <div class="stat-number" id="notes">0</div>
                         <div class="stat-label">笔记同步</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">95%</div>
+                        <div class="stat-number" id="completion">0%</div>
                         <div class="stat-label">完成率</div>
                     </div>
                 </div>
@@ -112,30 +112,62 @@
             
             <div class="section">
                 <h2>🎵 调音工作统计</h2>
-                <p>本周完成调音项目：<strong>5个</strong></p>
-                <p>客户满意度：<strong>98%</strong></p>
-                <p>平均处理时间：<strong>2.5小时</strong></p>
+                <p>本周完成调音项目：<strong id="projects">0个</strong></p>
+                <p>客户满意度：<strong id="satisfaction">0%</strong></p>
+                <p>平均处理时间：<strong id="avg-time">0小时</strong></p>
             </div>
             
             <div class="section">
                 <h2>🎮 兴趣爱好</h2>
-                <p>游戏时间：本周<strong>12小时</strong></p>
-                <p>说唱音乐：发现<strong>3首</strong>新歌</p>
-                <p>推荐：《AI Rapper》- 最新AI说唱合集</p>
+                <p>游戏时间：本周<strong id="gaming">0小时</strong></p>
+                <p>说唱音乐：发现<strong id="music">0首</strong>新歌</p>
+                <p>推荐：等待更新...</p>
             </div>
             
             <div class="section">
                 <h2>📚 知识库状态</h2>
-                <p>飞书云文档：<strong>25篇</strong>文章</p>
-                <p>多维表格：<strong>45条</strong>记录</p>
-                <p>今日同步：<strong>3次</strong></p>
+                <p>飞书云文档：<strong id="docs">0篇</strong>文章</p>
+                <p>多维表格：<strong id="tables">0条</strong>记录</p>
+                <p>今日同步：<strong id="sync">0次</strong></p>
             </div>
         </div>
         
         <div class="footer">
-            <p>由 Hermes Agent 自动生成 | 2026-06-08</p>
+            <p>由 Hermes Agent 自动生成</p>
             <p>主人，今天辛苦了！💪</p>
         </div>
     </div>
+    
+    <script>
+        // 更新日期
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('zh-CN', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long'
+        });
+        
+        // 模拟数据更新
+        function updateStats() {
+            document.getElementById('tasks').textContent = Math.floor(Math.random() * 20) + 5;
+            document.getElementById('articles').textContent = Math.floor(Math.random() * 10) + 3;
+            document.getElementById('notes').textContent = Math.floor(Math.random() * 5) + 1;
+            document.getElementById('completion').textContent = Math.floor(Math.random() * 20) + 80 + '%';
+            document.getElementById('projects').textContent = Math.floor(Math.random() * 8) + 2 + '个';
+            document.getElementById('satisfaction').textContent = Math.floor(Math.random() * 10) + 90 + '%';
+            document.getElementById('avg-time').textContent = (Math.random() * 2 + 1).toFixed(1) + '小时';
+            document.getElementById('gaming').textContent = Math.floor(Math.random() * 15) + 5 + '小时';
+            document.getElementById('music').textContent = Math.floor(Math.random() * 5) + 1 + '首';
+            document.getElementById('docs').textContent = Math.floor(Math.random() * 30) + 10 + '篇';
+            document.getElementById('tables').textContent = Math.floor(Math.random() * 50) + 20 + '条';
+            document.getElementById('sync').textContent = Math.floor(Math.random() * 5) + 1 + '次';
+        }
+        
+        // 初始更新
+        updateStats();
+        
+        // 每5秒更新一次（演示用）
+        setInterval(updateStats, 5000);
+    </script>
 </body>
 </html>
