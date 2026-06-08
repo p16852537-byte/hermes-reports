@@ -6,21 +6,22 @@
     <title>Hermes Agent 报告中心</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
+        body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             min-height: 100vh;
             padding: 20px;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background: white;
+            background: rgba(255,255,255,0.95);
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             overflow: hidden;
+            backdrop-filter: blur(10px);
         }
         .header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -65,6 +66,37 @@
             color: #666;
             font-size: 0.9em;
         }
+        .report-link {
+            display: block;
+            padding: 15px 20px;
+            background: white;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #333;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #eee;
+        }
+        .report-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        .report-link .date {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        .report-link .desc {
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 4px;
+        }
+        .report-link .arrow {
+            float: right;
+            color: #667eea;
+            font-size: 1.2em;
+        }
         .footer {
             background: #f8f9fa;
             padding: 20px 30px;
@@ -86,88 +118,56 @@
             <p>主人的个人数据分析平台</p>
             <p id="current-date"></p>
         </div>
-        
+
         <div class="content">
             <div class="section">
-                <h2>📈 今日数据概览</h2>
+                <h2>📅 每日报告</h2>
+                <a href="reports/2026-06-08.html" class="report-link">
+                    <span class="arrow">→</span>
+                    <div class="date">2026年6月8日 星期一</div>
+                    <div class="desc">🎵 Studio One人声效果链设计 | 🎤 说唱音乐深度学习 | 🔧 音频分析能力搭建 | 📡 6次情报巡检</div>
+                </a>
+            </div>
+
+            <div class="section">
+                <h2>📈 数据概览</h2>
                 <div class="stat-grid">
                     <div class="stat-card">
-                        <div class="stat-number" id="tasks">0</div>
-                        <div class="stat-label">处理任务</div>
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">今日会话</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number" id="articles">0</div>
-                        <div class="stat-label">文章收藏</div>
+                        <div class="stat-number">52</div>
+                        <div class="stat-label">教程收藏</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number" id="notes">0</div>
-                        <div class="stat-label">笔记同步</div>
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">知识文件</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number" id="completion">0%</div>
-                        <div class="stat-label">完成率</div>
+                        <div class="stat-number">9</div>
+                        <div class="stat-label">插件配置</div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="section">
-                <h2>🎵 调音工作统计</h2>
-                <p>本周完成调音项目：<strong id="projects">0个</strong></p>
-                <p>客户满意度：<strong id="satisfaction">0%</strong></p>
-                <p>平均处理时间：<strong id="avg-time">0小时</strong></p>
-            </div>
-            
-            <div class="section">
-                <h2>🎮 兴趣爱好</h2>
-                <p>游戏时间：本周<strong id="gaming">0小时</strong></p>
-                <p>说唱音乐：发现<strong id="music">0首</strong>新歌</p>
-                <p>推荐：等待更新...</p>
-            </div>
-            
-            <div class="section">
-                <h2>📚 知识库状态</h2>
-                <p>飞书云文档：<strong id="docs">0篇</strong>文章</p>
-                <p>多维表格：<strong id="tables">0条</strong>记录</p>
-                <p>今日同步：<strong id="sync">0次</strong></p>
+                <h2>🔧 最近工作</h2>
+                <p><strong>Studio One 人声效果链</strong> — 9个插件完整参数配置，针对干声E调优化</p>
+                <p style="margin-top:8px;color:#888;">RX 11 → Auto-Tune → Pro-C 2 → Pro-Q 4 → Saturn 2 → De-esser → Valhalla → Timeless 3</p>
             </div>
         </div>
-        
+
         <div class="footer">
             <p>由 Hermes Agent 自动生成</p>
             <p>主人，今天辛苦了！💪</p>
         </div>
     </div>
-    
+
     <script>
-        // 更新日期
         document.getElementById('current-date').textContent = new Date().toLocaleDateString('zh-CN', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            weekday: 'long'
+            year: 'numeric', month: 'long', day: 'numeric', weekday: 'long'
         });
-        
-        // 模拟数据更新
-        function updateStats() {
-            document.getElementById('tasks').textContent = Math.floor(Math.random() * 20) + 5;
-            document.getElementById('articles').textContent = Math.floor(Math.random() * 10) + 3;
-            document.getElementById('notes').textContent = Math.floor(Math.random() * 5) + 1;
-            document.getElementById('completion').textContent = Math.floor(Math.random() * 20) + 80 + '%';
-            document.getElementById('projects').textContent = Math.floor(Math.random() * 8) + 2 + '个';
-            document.getElementById('satisfaction').textContent = Math.floor(Math.random() * 10) + 90 + '%';
-            document.getElementById('avg-time').textContent = (Math.random() * 2 + 1).toFixed(1) + '小时';
-            document.getElementById('gaming').textContent = Math.floor(Math.random() * 15) + 5 + '小时';
-            document.getElementById('music').textContent = Math.floor(Math.random() * 5) + 1 + '首';
-            document.getElementById('docs').textContent = Math.floor(Math.random() * 30) + 10 + '篇';
-            document.getElementById('tables').textContent = Math.floor(Math.random() * 50) + 20 + '条';
-            document.getElementById('sync').textContent = Math.floor(Math.random() * 5) + 1 + '次';
-        }
-        
-        // 初始更新
-        updateStats();
-        
-        // 每5秒更新一次（演示用）
-        setInterval(updateStats, 5000);
     </script>
 </body>
 </html>
