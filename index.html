@@ -97,6 +97,25 @@
             color: #667eea;
             font-size: 1.2em;
         }
+        .report-link.latest {
+            border-left: 4px solid #667eea;
+            background: linear-gradient(135deg, #f8f9ff, #fff);
+        }
+        .badge-new {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7em;
+            font-weight: 600;
+            margin-left: 8px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
         .footer {
             background: #f8f9fa;
             padding: 20px 30px;
@@ -122,6 +141,11 @@
         <div class="content">
             <div class="section">
                 <h2>📅 每日报告</h2>
+                <a href="reports/2026-06-10.html" class="report-link latest">
+                    <span class="arrow">→</span>
+                    <div class="date">2026年6月10日 星期三 <span class="badge-new">NEW</span></div>
+                    <div class="desc">💻 系统助手EXE开发 | 🔧 工具箱后台修复 | 📋 82技能全量盘点 | 📡 7次情报巡检</div>
+                </a>
                 <a href="reports/2026-06-08.html" class="report-link">
                     <span class="arrow">→</span>
                     <div class="date">2026年6月8日 星期一</div>
@@ -130,31 +154,31 @@
             </div>
 
             <div class="section">
-                <h2>📈 数据概览</h2>
+                <h2>📈 最新数据概览</h2>
                 <div class="stat-grid">
                     <div class="stat-card">
-                        <div class="stat-number">10</div>
+                        <div class="stat-number">4</div>
                         <div class="stat-label">今日会话</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">52</div>
-                        <div class="stat-label">教程收藏</div>
+                        <div class="stat-number">82</div>
+                        <div class="stat-label">技能总数</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">情报巡检</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">5</div>
-                        <div class="stat-label">知识文件</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">9</div>
-                        <div class="stat-label">插件配置</div>
+                        <div class="stat-label">后台页面</div>
                     </div>
                 </div>
             </div>
 
             <div class="section">
                 <h2>🔧 最近工作</h2>
-                <p><strong>Studio One 人声效果链</strong> — 9个插件完整参数配置，针对干声E调优化</p>
-                <p style="margin-top:8px;color:#888;">RX 11 → Auto-Tune → Pro-C 2 → Pro-Q 4 → Saturn 2 → De-esser → Valhalla → Timeless 3</p>
+                <p><strong>Windows系统助手</strong> — Python+PyQt5开发，11KB轻量EXE，支持安全中心/防火墙/更新一键控制</p>
+                <p style="margin-top:8px;color:#888;">调音师工具箱后台修复 — 5页面管理后台重建完成</p>
             </div>
         </div>
 
