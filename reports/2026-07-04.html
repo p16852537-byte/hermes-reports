@@ -160,6 +160,19 @@
         }
         .status-dot.green { background: #2e7d32; }
         .status-dot.orange { background: #e65100; }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: #e0e0e0;
+            margin: 8px 0;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        .progress-fill.green { background: linear-gradient(90deg, #43a047, #2e7d32); }
         @media (max-width: 600px) {
             body { padding: 10px; }
             .header { padding: 25px 20px; }
@@ -175,7 +188,7 @@
         <div class="header">
             <h1>📊 Hermes Agent 每日报告</h1>
             <div class="date">2026年7月4日 星期六</div>
-            <div class="subtitle">主人周末好！今天是自动化日 🤖✨</div>
+            <div class="subtitle">主人周末好！今天是自动化 + 工具箱基建日 🛠️🤖</div>
         </div>
 
         <div class="content">
@@ -184,19 +197,19 @@
                 <h2><span class="emoji-big">📈</span> 今日数据概览</h2>
                 <div class="stat-grid">
                     <div class="stat-card">
-                        <div class="stat-number">6</div>
+                        <div class="stat-number">9</div>
                         <div class="stat-label">自动化任务</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">5</div>
+                        <div class="stat-number">32</div>
                         <div class="stat-label">活跃技能</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">100%</div>
+                        <div class="stat-number green">100%</div>
                         <div class="stat-label">任务完成率</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">4</div>
+                        <div class="stat-number">5</div>
                         <div class="stat-label">历史报告</div>
                     </div>
                 </div>
@@ -208,17 +221,12 @@
                 <div class="status-row">
                     <span class="status-dot green"></span>
                     <span>⏰ 定时巡检</span>
-                    <span style="color:#2e7d32;margin-left:auto;">✅ 16:40 已完成</span>
+                    <span style="color:#2e7d32;margin-left:auto;">✅ 5次 · 16:40~21:00</span>
                 </div>
                 <div class="status-row">
                     <span class="status-dot green"></span>
-                    <span>🎉 周末关怀</span>
-                    <span style="color:#2e7d32;margin-left:auto;">✅ 问候已发送</span>
-                </div>
-                <div class="status-row">
-                    <span class="status-dot green"></span>
-                    <span>🎤 说唱学习（模块1/5）</span>
-                    <span style="color:#2e7d32;margin-left:auto;">✅ 进行中</span>
+                    <span>📊 HTML日报生成</span>
+                    <span style="color:#2e7d32;margin-left:auto;">✅ 已完成（更新版）</span>
                 </div>
                 <div class="status-row">
                     <span class="status-dot green"></span>
@@ -227,70 +235,114 @@
                 </div>
                 <div class="status-row">
                     <span class="status-dot green"></span>
-                    <span>🌙 晚安提醒</span>
-                    <span style="color:#2e7d32;margin-left:auto;">✅ 待执行</span>
+                    <span>🎤 说唱学习（模块1/5）</span>
+                    <span style="color:#2e7d32;margin-left:auto;">✅ 进行中</span>
                 </div>
                 <div class="status-row">
                     <span class="status-dot green"></span>
-                    <span>📊 HTML报告生成</span>
-                    <span style="color:#2e7d32;margin-left:auto;">✅ 当前任务</span>
+                    <span>🛡️ 系统维护</span>
+                    <span style="color:#2e7d32;margin-left:auto;">✅ 正常</span>
                 </div>
             </div>
 
-            <!-- 说唱学习 -->
+            <!-- 调音师工具箱 -->
             <div class="section">
-                <h2><span class="emoji-big">🎤</span> 说唱全体系学习进度</h2>
+                <h2><span class="emoji-big">🛠️</span> 调音师工具箱 — 里程碑突破</h2>
                 <div class="stat-grid">
                     <div class="stat-card">
-                        <div class="stat-number purple">1/5</div>
-                        <div class="stat-label">进度</div>
+                        <div class="stat-number green">v2.1</div>
+                        <div class="stat-label">开发指南</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number purple">📖</div>
-                        <div class="stat-label">当前模块：文化术语</div>
+                        <div class="stat-number green">0a</div>
+                        <div class="stat-label">基础设施完成</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number green">✅</div>
+                        <div class="stat-label">PyInstaller构建</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">13</div>
+                        <div class="stat-label">优化项落地</div>
                     </div>
                 </div>
-                <div class="highlight-box purple-box">
-                    <strong>🎯 今日学习启动：</strong> 说唱全体系自动学习任务已启动！<br>
-                    <strong>模块1</strong> — 说唱文化术语：从1973年布朗克斯起源到2020年代多元化融合，全面梳理说唱历史脉络、风格流派和行业术语。<br><br>
-                    <strong>📋 后续计划：</strong><br>
-                    ▸ 模块2：作词押韵技巧<br>
-                    ▸ 模块3：Beat编曲结构<br>
-                    ▸ 模块4：混音实操技术<br>
-                    ▸ 模块5：经典作品案例深度分析
+
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 35%;"></div>
+                </div>
+                <p style="color:#888;font-size:0.85em;text-align:right;">总进度 35% — 14子阶段中完成约5个</p>
+
+                <div class="highlight-box">
+                    <strong>🔥 今日三大进展：</strong><br><br>
+                    <strong>1️⃣ DEVELOPMENT_GUIDE v2.1 发布</strong><br>
+                    从 v1 → v2.0 → v2.1 三轮迭代优化，新增 <strong>13 项</strong>关键改进：数据库迁移策略、搜索API、Dear PyGui 兼容性验证脚本、日志机制、Nginx 配置样例、测试隔离、代码风格规范等。<br><br>
+                    <strong>2️⃣ 阶段 0a 基础设施完成</strong><br>
+                    项目目录结构、.env 模板、requirements.txt+package.json 锁定版本、.editorconfig+pyproject.toml、handoff_manifest.json 初始化、dpg_verify.py 脚本。<br><br>
+                    <strong>3️⃣ PyInstaller 构建 + 一键启动脚本</strong><br>
+                    客户端 exe 构建成功，创建 <strong>一键启动.bat</strong>（自动检测后端+启动客户端）、<strong>启动后端.bat</strong>、<strong>启动客户端.bat</strong>。修复 Windows 原生错误弹窗，桌面部署完成。
                 </div>
             </div>
 
-            <!-- 近期项目 -->
+            <!-- 今晚情报 -->
             <div class="section">
-                <h2><span class="emoji-big">🛠️</span> 近期项目回顾</h2>
+                <h2><span class="emoji-big">📡</span> 今日情报精选</h2>
                 <ul class="activity-list">
                     <li>
-                        <span class="activity-icon">🛡️</span>
+                        <span class="activity-icon">🌤️</span>
                         <span class="activity-text">
-                            <strong>Win11安全中心修复工具</strong>
-                            <span class="tag tag-fix">已交付</span><br>
-                            7月2日完成 — 11个修复模块、WPF图形界面、单文件EXE（154MB），可一键修复安全中心+重装中文模块
+                            <strong>青岛天气</strong><br>
+                            晴 25~30°C | 体感35°C | 傍晚25°C舒适 | 周日转阵雨记得带伞
                         </span>
-                        <span class="activity-time">7/2</span>
+                        <span class="activity-time">全天</span>
                     </li>
                     <li>
-                        <span class="activity-icon">🔧</span>
+                        <span class="activity-icon">🟡</span>
                         <span class="activity-text">
-                            <strong>调音师工具箱 Phase A&B</strong>
-                            <span class="tag tag-work">待续</span><br>
-                            6月13日完成阶段B — 新建Soundcard模型、下载到本地、导航加首页、首页公告、声卡三级浏览。等待阶段C（场景包+进度条）
+                            <strong>GTA6 PS联动争议持续发酵</strong>
+                            <span class="tag tag-fire">争议</span><br>
+                            PS5上线一周即下架，福布斯炮轰\"20年最大丑闻\"
                         </span>
-                        <span class="activity-time">6/13</span>
+                        <span class="activity-time">17:00</span>
                     </li>
                     <li>
-                        <span class="activity-icon">🧹</span>
+                        <span class="activity-icon">🟢</span>
                         <span class="activity-text">
-                            <strong>Skill大扫除 96→32</strong>
-                            <span class="tag tag-study">已完成</span><br>
-                            6月14日完成 — 从96个精简到32个核心技能，保留6个S级核心、7个A级高频、5个音频技能
+                            <strong>《鬼武者：剑之道》提前至9月4日发售</strong><br>
+                            卡普空老粉狂喜，全平台上线
                         </span>
-                        <span class="activity-time">6/14</span>
+                        <span class="activity-time">20:00</span>
+                    </li>
+                    <li>
+                        <span class="activity-icon">🟢</span>
+                        <span class="activity-text">
+                            <strong>《碧蓝幻想Relink 无尽黄昏》7/9发售</strong><br>
+                            倒计时3天！赠送千元充值卡
+                        </span>
+                        <span class="activity-time">20:00</span>
+                    </li>
+                    <li>
+                        <span class="activity-icon">🟢</span>
+                        <span class="activity-text">
+                            <strong>《007 初露锋芒》游民评测8.6分</strong><br>
+                            顶级特工大片体验
+                        </span>
+                        <span class="activity-time">20:00~21:00</span>
+                    </li>
+                    <li>
+                        <span class="activity-icon">🟢</span>
+                        <span class="activity-text">
+                            <strong>《光环》战斗进化重制版登陆PS5</strong><br>
+                            Halo系列首次登陆PlayStation平台
+                        </span>
+                        <span class="activity-time">18:39</span>
+                    </li>
+                    <li>
+                        <span class="activity-icon">🎤</span>
+                        <span class="activity-text">
+                            <strong>《说唱巅峰对决2026》热播中</strong><br>
+                            周六晚继续追更
+                        </span>
+                        <span class="activity-time">活跃</span>
                     </li>
                 </ul>
             </div>
@@ -304,24 +356,24 @@
                         <div class="stat-label">可用技能</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number green">6</div>
-                        <div class="stat-label">D盘工具项</div>
+                        <div class="stat-number green">9</div>
+                        <div class="stat-label">今日自动化</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number green">4</div>
+                        <div class="stat-number green">5</div>
                         <div class="stat-label">GitHub报告</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number green">✅</div>
-                        <div class="stat-label">Git推送就绪</div>
+                        <div class="stat-label">Git已推送</div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="footer">
-            <p>由 <strong>Hermes Agent</strong> 自动生成 | 2026年7月4日 16:45</p>
-            <p style="margin-top:8px;">主人周末快乐！今天所有自动化任务正常运行，说唱学习正式启动 🎤🔥</p>
+            <p>由 <strong>Hermes Agent</strong> 自动生成 | 2026年7月4日 21:05</p>
+            <p style="margin-top:8px;">主人周六辛苦了！工具箱基建日收获满满，今晚好好休息 🌙✨</p>
         </div>
     </div>
 </body>
